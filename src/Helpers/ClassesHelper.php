@@ -115,9 +115,9 @@ class ClassesHelper
         *
 	*/
         private function getClassNamesFromFile(string $file): array
-    {											
-        return $this->getClassNamesFromContent(file_get_contents($file));
-    }
+        {											
+            return $this->getClassNamesFromContent(file_get_contents($file));
+        }
 	
 	/**
 	* Determines and returns the fully qualified class name(s ?) from the content of a file 
@@ -170,6 +170,6 @@ class ClassesHelper
                  }
              }
 		
-           return $classes;
+             return $classes;
        }
   }
