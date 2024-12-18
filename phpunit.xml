@@ -1,6 +1,3 @@
-<!-- 
-https://cylab.be/blog/329/use-phpunit-to-test-your-php-project?accept-cookies=1
--->
 <phpunit bootstrap="src/bootstrap.php" colors="true" verbase="true" stopOnFailute="false">
     <testsuites>
         <testsuite name="Unit Tests">
