@@ -60,21 +60,21 @@ class MethodsInspector implements InspectorInterface
 			
 						if  (strcmp($formatted_str,strtolower($method_name)) == 0) {		
 					       						
-						#   https://www.php.net/manual/en/reflectionmethod.construct.php
+						     //https://www.php.net/manual/en/reflectionmethod.construct.php
 							
 						    $rm = new ReflectionMethod(stackedDataArray[$cfqn_key]['cfqn'],$method_name);
 														
-							$methods_arr['name'] = $method_name;							
-							$methods_arr['is_internal'] = $rm->isInternal();
-							$methods_arr['is_abstract'] = $rm->isAbstract();
-							$methods_arr['is_final'] = $rm->isFinal();
-							$methods_arr['is_public'] = $rm->isPublic();
-							$methods_arr['is_private'] = $rm->isPrivate();
-							$methods_arr['is_protected'] = $rm->isProtected();
-							$methods_arr['is_static'] = $rm->isStatic();
-							$methods_arr['is_constructor'] = $rm->isConstructor();
-							$methods_arr['class'] = $stackedDataArray[$cfqn_key]['name'];
-							$methods_arr['filename'] = $stackedDataArray[$cfqn_key]['filename'];
+						    $methods_arr['name'] = $method_name;							
+						    $methods_arr['is_internal'] = $rm->isInternal();
+						    $methods_arr['is_abstract'] = $rm->isAbstract();
+						    $methods_arr['is_final'] = $rm->isFinal();
+						    $methods_arr['is_public'] = $rm->isPublic();
+						    $methods_arr['is_private'] = $rm->isPrivate();
+						    $methods_arr['is_protected'] = $rm->isProtected();
+						    $methods_arr['is_static'] = $rm->isStatic();
+						    $methods_arr['is_constructor'] = $rm->isConstructor();
+						    $methods_arr['class'] = $stackedDataArray[$cfqn_key]['name'];
+						    $methods_arr['filename'] = $stackedDataArray[$cfqn_key]['filename'];
    						
 						}
 					}
@@ -130,7 +130,7 @@ class MethodsInspector implements InspectorInterface
 				Protected: %s\n
 				Static: %s\n				
 				Constructor: %s\n
-                File location: %s\n',			
+                                File location: %s\n',			
 				$arr['name'],$arr['class'],$is_internal,$is_abstract,$is_final,$is_public,$is_private,
 				$is_protected,$is_static,$is_constructor,$arr['filename']);		 
 		}
