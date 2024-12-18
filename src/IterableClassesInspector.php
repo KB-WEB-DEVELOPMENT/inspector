@@ -89,7 +89,7 @@ class IterableClassesInspector implements InspectorInterface
 		
 		$iterable_classes_arr = $this->getPrintingData($searchTerm);
 	
-	    $formatted_str = ''; 
+	        $formatted_str = ''; 
 	
 		foreach ($iterable_classes_arr as $arr) {
 			 
