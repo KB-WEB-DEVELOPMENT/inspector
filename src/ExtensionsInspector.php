@@ -57,13 +57,9 @@ class ExtensionsInspector implements InspectorInterface
 				if  ( ($stackedDataArray[$cfqn_key]['reflection_extension_object_name'] != 'user defined class') &&
 				      (strcmp($formatted_str,strtolower($stackedDataArray[$cfqn_key]['reflection_extension_object_name'])) == 0)     	
 			        ) {		
-					    
-						/**** https://www.php.net/manual/en/class.reflectionextension.php  ******/
-						# https://www.php.net/manual/en/reflectionextension.getname.php
-						
-						$extensions_arr['name'] = $stackedDataArray[$cfqn_key]['reflection_extension_object_name'];
-					        $extensions_arr['namespace'] = $stackedDataArray[$cfqn_key]['namespace'] ?? 'not in a namespace';
-						$extensions_arr['filename'] = $stackedDataArray[$cfqn_key]['filename'];
+				    $extensions_arr['name'] = $stackedDataArray[$cfqn_key]['reflection_extension_object_name'];
+				    $extensions_arr['namespace'] = $stackedDataArray[$cfqn_key]['namespace'] ?? 'not in a namespace';
+				    $extensions_arr['filename'] = $stackedDataArray[$cfqn_key]['filename'];
 				}
 			}
 
