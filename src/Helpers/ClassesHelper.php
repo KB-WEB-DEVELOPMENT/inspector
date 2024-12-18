@@ -16,7 +16,7 @@ class ClassesHelper
 	* Retrieves all classes fully qualified names inside src/Project, its directories and subdirectories
 	*
 	* @return array
-    *
+        *
 	* @return void
 	*
 	*/
@@ -32,7 +32,7 @@ class ClassesHelper
 		
 			foreach ($project_dirs as $dir_name) {
 																
-				$classes_fully_qualified_names[] = 	$this->getClassNamesFromDirectory($dir_name);
+				$classes_fully_qualified_names[] = $this->getClassNamesFromDirectory($dir_name);
 			}			
 		}
 		
@@ -44,35 +44,34 @@ class ClassesHelper
 	* Retrieves an array of all directories and subdirectories within the src/Project folder
 	*
 	* @return array
-    *
+        *
 	*/
 	private function getDirectoriesList(): array 
-    {
+        {
+	   $path = __DIR__ . '/../project'; 
 		
-		$path = __DIR__ . '/../project'; 
-		
-		$array_of_dirs = [];
+	   $array_of_dirs = [];
 	
-		$array_of_dirs[] = $path;
+	   $array_of_dirs[] = $path;
 	
-		$iter = new RecursiveIteratorIterator(
-					new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS),
-					RecursiveIteratorIterator::SELF_FIRST,
-					RecursiveIteratorIterator::CATCH_GET_CHILD // Ignore "Permission denied"
-			    );
+	   $iter = new RecursiveIteratorIterator(
+			   new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS),
+			   RecursiveIteratorIterator::SELF_FIRST,
+			   RecursiveIteratorIterator::CATCH_GET_CHILD // Ignore "Permission denied"
+		    );
 					
-		if(!empty($iter))  {
+	   if(!empty($iter))  {
 	
-			foreach ($iter as $path => $dir) {
+	        foreach ($iter as $path => $dir) {
 	
-				if ($dir->isDir()) {
+		   if ($dir->isDir()) {
 
-					$array_of_dirs[] = $path;
-				}
-			}
-		}
+		       $array_of_dirs[] = $path;
+		   }
+		 }
+	    }
 	
-		return $array_of_dirs;
+	    return $array_of_dirs;
 	}
 	
 	/**
@@ -80,33 +79,32 @@ class ClassesHelper
 	* Retrieves all fully qualified classes names contained in all files within a directory
 	*
 	* @return array
-    *
+        *
 	*/
 	private function getClassNamesFromDirectory(string $directory): array
-    {
-        $modelClassNames = [];
+        {
+             $modelClassNames = [];
         
-		foreach (new RecursiveIteratorIterator(
-					new RecursiveDirectoryIterator(
-						$directory, RecursiveDirectoryIterator::SKIP_DOTS |
-						RecursiveDirectoryIterator::CURRENT_AS_SELF)) as $file
-				) {
-								
-					$parts = [];
+	      foreach (new RecursiveIteratorIterator(
+			   new RecursiveDirectoryIterator(
+				$directory, RecursiveDirectoryIterator::SKIP_DOTS |
+				RecursiveDirectoryIterator::CURRENT_AS_SELF)) as $file
+		      ) {				
+			   $parts = [];
 					
-					$parts = explode(".",$file);
+			   $parts = explode(".",$file);
 
-					$extension = (is_array($parts) && count($parts) > 1) ? end($parts) : null;
+			   $extension = (is_array($parts) && count($parts) > 1) ? end($parts) : null;
 					
-					if ( (!is_null($extension)) && ((new SplFileInfo($file))->getExtension() === 'php') ) {
+			    if ( (!is_null($extension)) && ((new SplFileInfo($file))->getExtension() === 'php') ) {
 																		
-						$modelClassNames = array_merge($modelClassNames, $this->getClassNamesFromFile($file->getPathName()));
+				$modelClassNames = array_merge($modelClassNames, $this->getClassNamesFromFile($file->getPathName()));
 				
-					}
-		}
+			    }
+		      }
 		
-        return $modelClassNames;
-    }
+                      return $modelClassNames;
+        }
 
 	/**
 	*
@@ -114,9 +112,9 @@ class ClassesHelper
 	* in order to retrieve the fully qualified class name(s ?) of that file.
 	*
 	* @return array
-    *
+        *
 	*/
-    private function getClassNamesFromFile(string $file): array
+        private function getClassNamesFromFile(string $file): array
     {											
         return $this->getClassNamesFromContent(file_get_contents($file));
     }
@@ -128,50 +126,50 @@ class ClassesHelper
 	*
 	* @return array
 	*/
-    private function getClassNamesFromContent(string $content): array
-    {
-        // https://stackoverflow.com/a/67099502/2263114
-        $classes = [];
-        $namespace = '';
-        $tokens = PhpToken::tokenize($content);
-        $content = null;
+        private function getClassNamesFromContent(string $content): array
+        {
+            // https://stackoverflow.com/a/67099502/2263114
+            $classes = [];
+            $namespace = '';
+            $tokens = PhpToken::tokenize($content);
+            $content = null;
 
-        for ($i = 0; $i < count($tokens); $i++) {
+            for ($i = 0; $i < count($tokens); $i++) {
 			
-            if ($tokens[$i]->getTokenName() === 'T_NAMESPACE') {
+                if ($tokens[$i]->getTokenName() === 'T_NAMESPACE') {
             
-				for ($j = $i + 1; $j < count($tokens); $j++) {
+		    for ($j = $i + 1; $j < count($tokens); $j++) {
                     
-					if ($tokens[$j]->getTokenName() === 'T_NAME_QUALIFIED') {
+		        if ($tokens[$j]->getTokenName() === 'T_NAME_QUALIFIED') {
 						
-                        $namespace = $tokens[$j]->text;
+                            $namespace = $tokens[$j]->text;
                         
-						break;
+			    break;
+                        }
                     }
                 }
-            }
 
-            if ($tokens[$i]->getTokenName() === 'T_CLASS') {
+                if ($tokens[$i]->getTokenName() === 'T_CLASS') {
 				
-                for ($j = $i + 1; $j < count($tokens); $j++) {
+                    for ($j = $i + 1; $j < count($tokens); $j++) {
 					
-                    if ($tokens[$j]->getTokenName() === 'T_WHITESPACE') {
+                        if ($tokens[$j]->getTokenName() === 'T_WHITESPACE') {
 						
-                        continue;
-                    }
+                           continue;
+                        }
 
-                    if ($tokens[$j]->getTokenName() === 'T_STRING') {
+                        if ($tokens[$j]->getTokenName() === 'T_STRING') {
                     
-						$classes[] = $namespace . '\\' . $tokens[$j]->text;
+		            $classes[] = $namespace . '\\' . $tokens[$j]->text;
                     
-					} else {
+			 } else {
 						
-                        break;
-                    }
-                }
-            }
-        }
+                             break;
+                         }
+                     }
+                 }
+             }
 		
-        return $classes;
-    }
-}
+           return $classes;
+       }
+  }
