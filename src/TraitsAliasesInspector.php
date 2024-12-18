@@ -89,7 +89,7 @@ class TraitsAliasesInspector implements InspectorInterface
 		
 		$traits_aliases_arr = $this->getPrintingData($searchTerm);
 	
-	    $formatted_str = '';
+	        $formatted_str = '';
 	
 		foreach ($traits_aliases_arr as $arr) {
 			 
