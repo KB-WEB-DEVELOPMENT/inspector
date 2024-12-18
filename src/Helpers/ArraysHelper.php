@@ -31,8 +31,7 @@ class ArraysHelper
 		
 			foreach ($project_dirs as $dir_name) {
 			
-				// ERROR : This should be a merge !!!!!!!!
-				$arraysData[] = $this->getArraysDataFromDirectory($dir_name);	
+		           $arraysData[] = $this->getArraysDataFromDirectory($dir_name);	
 			}
 		}
 		
@@ -40,7 +39,7 @@ class ArraysHelper
 		
 			foreach ($arraysData as $arr) {
 			
-				$merged_arrays_data = array_merge($merged_arrays_data,$arr);		
+			   $merged_arrays_data = array_merge($merged_arrays_data,$arr);		
 			}
 		}
 		
@@ -64,10 +63,10 @@ class ArraysHelper
 		$array_of_dirs[] = $path;
 	
 		$iter = new RecursiveIteratorIterator(
-					new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS),
-					RecursiveIteratorIterator::SELF_FIRST,
-					RecursiveIteratorIterator::CATCH_GET_CHILD // Ignore "Permission denied"
-			    );
+			   new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS),
+			   RecursiveIteratorIterator::SELF_FIRST,
+			   RecursiveIteratorIterator::CATCH_GET_CHILD // Ignore "Permission denied"
+			);
 					
 		if(!empty($iter))  {
 	
