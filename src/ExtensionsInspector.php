@@ -62,7 +62,7 @@ class ExtensionsInspector implements InspectorInterface
 						# https://www.php.net/manual/en/reflectionextension.getname.php
 						
 						$extensions_arr['name'] = $stackedDataArray[$cfqn_key]['reflection_extension_object_name'];
-					    $extensions_arr['namespace'] = $stackedDataArray[$cfqn_key]['namespace'] ?? 'not in a namespace';
+					        $extensions_arr['namespace'] = $stackedDataArray[$cfqn_key]['namespace'] ?? 'not in a namespace';
 						$extensions_arr['filename'] = $stackedDataArray[$cfqn_key]['filename'];
 				}
 			}
