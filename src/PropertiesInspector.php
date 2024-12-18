@@ -83,7 +83,7 @@ class PropertiesInspector implements InspectorInterface
 							$props_arr['attributes'] = $att_str;
 							
 							$props_arr['class'] = $stackedDataArray[$cfqn_key]['name'];						
-						    $props_arr['filename'] = $stackedDataArray[$cfqn_key]['filename'];
+						        $props_arr['filename'] = $stackedDataArray[$cfqn_key]['filename'];
 						}					
 					}
 				}
