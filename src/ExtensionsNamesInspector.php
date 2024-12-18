@@ -57,10 +57,10 @@ class ExtensionsNamesInspector implements InspectorInterface
 				if  ( ($stackedDataArray[$cfqn_key]['reflection_extension_class_name'] != 'user defined class') &&
 				      (strcmp($formatted_str,strtolower($stackedDataArray[$cfqn_key]['reflection_extension_class_name'])) == 0)     	
 			        ) {		
-						$ext_names_arr['name'] = $stackedDataArray[$cfqn_key]['reflection_extension_class_name'];
-						$ext_names_arr['namespace'] = $stackedDataArray[$cfqn_key]['namespace'] ?? 'not in a namespace';
-						$ext_names_arr['filename'] = $stackedDataArray[$cfqn_key]['filename'];
-					}
+					$ext_names_arr['name'] = $stackedDataArray[$cfqn_key]['reflection_extension_class_name'];
+					$ext_names_arr['namespace'] = $stackedDataArray[$cfqn_key]['namespace'] ?? 'not in a namespace';
+					$ext_names_arr['filename'] = $stackedDataArray[$cfqn_key]['filename'];
+				  }
 			}
 		}		
 	
