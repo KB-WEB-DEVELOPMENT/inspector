@@ -1,0 +1,27 @@
+{
+    "name": "KB-WEB-DEVELOPMENT/inspector",
+	"description": "Ongoing work - package which uses PHP reflection API to determine if a string matches an instantiable class name, an interface name, etc ...",
+    "type": "php8-oop-package",
+    "homepage": "https://github.com/KB-WEB-DEVELOPMENT/inspector-php8-package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Inspector\\": "src/"
+        }
+    },
+	"require": {
+		"php": ">=8.0"
+    },
+	"config": {
+		"optimizer-autoloader": true	
+	},
+	"require-dev": {
+		"phpunit/phpunit": ">=10.5"
+	},	
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ]	
+	}
+}
+
