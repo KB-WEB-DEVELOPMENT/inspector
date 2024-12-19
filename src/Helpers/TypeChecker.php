@@ -23,7 +23,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/	
-	protected function isAbstractClass(string $searchTerm): bool
+	protected function isAbstractClass(string $searchTerm = " "): bool
 	{		
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -61,7 +61,7 @@ class TypeChecker
 	*
 	*/
 	
-	protected function isArrayNamedKey(string $searchTerm): bool
+	protected function isArrayNamedKey(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -116,7 +116,7 @@ class TypeChecker
 	*
 	*/
 		
-	protected function isArrayStringValue(string $searchTerm): bool
+	protected function isArrayStringValue(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -171,7 +171,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/			
-	protected function isAttribute(string $searchTerm): bool
+	protected function isAttribute(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -214,7 +214,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/
-	protected function isConstant(string $searchTerm): bool
+	protected function isConstant(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -255,7 +255,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/
-	protected function isEnum(string $searchTerm): bool
+	protected function isEnum(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -291,7 +291,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/
-	protected function isEnumCaseValue(string $searchTerm): bool
+	protected function isEnumCaseValue(string $searchTerm = " "): bool
 	{
 		
 		$formatted_str = strtolower(trim($searchTerm));
@@ -333,7 +333,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/	
-	protected function isEnumCaseStringBackingValue(string $searchTerm): bool
+	protected function isEnumCaseStringBackingValue(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -374,7 +374,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/
-	protected function isExtension(string $searchTerm): bool
+	protected function isExtension(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -410,7 +410,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/	
-	protected function isExtensionName(string $searchTerm): bool
+	protected function isExtensionName(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -447,7 +447,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/			
-	protected function isInstantiableClass(string $searchTerm): bool
+	protected function isInstantiableClass(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -484,7 +484,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/
-	protected function isInterface(string $searchTerm): bool
+	protected function isInterface(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -522,7 +522,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/
-	protected function isIterableClass(string $searchTerm): bool
+	protected function isIterableClass(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -559,7 +559,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/
-	protected function isMethod(string $searchTerm): bool
+	protected function isMethod(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -600,7 +600,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/
-	protected function isNamespace(string $searchTerm): bool
+	protected function isNamespace(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -638,7 +638,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/
-	protected function isParameter(string $searchTerm): bool
+	protected function isParameter(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -679,7 +679,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/
-	protected function isProperty(string $searchTerm): bool
+	protected function isProperty(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -720,7 +720,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/	
-	protected function isTraitAlias(string $searchTerm): bool
+	protected function isTraitAlias(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
@@ -762,7 +762,7 @@ class TypeChecker
 	* @return bool
 	*
 	*/
-	protected function isTrait(string $searchTerm): bool
+	protected function isTrait(string $searchTerm = " "): bool
 	{
 		$formatted_str = strtolower(trim($searchTerm));
 		
