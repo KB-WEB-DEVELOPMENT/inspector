@@ -18,7 +18,7 @@ class ArrayStringValuesInspector implements InspectorInterface
 	* 
 	* @return bool
 	*/		
-	public function find(string $searchTerm): bool
+	public function find(string $searchTerm = " "): bool
 	{
 		$ci = new ClassesInspectorHelper();
 		
@@ -34,7 +34,7 @@ class ArrayStringValuesInspector implements InspectorInterface
 	* 
 	* @return null|array
 	*/	
-	public function getPrintingData(string $searchTerm): ?array
+	public function getPrintingData(string $searchTerm = " "): ?array
 	{
 		if ($this->find($searchTerm) === false) {			
 			return null;	
@@ -92,7 +92,7 @@ class ArrayStringValuesInspector implements InspectorInterface
 	* 
 	* @return null|string
 	*/	  
-	public function printData(string $searchTerm): ?string
+	public function printData(string $searchTerm = " "): ?string
 	{
 		if (is_null($this->getPrintingData($searchTerm))) {
 			
