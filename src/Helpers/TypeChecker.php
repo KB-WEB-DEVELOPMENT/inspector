@@ -4,52 +4,50 @@ namespace Inspector\Helpers;
 
 class TypeChecker
 {    	
-	public function __construct(
+      public function __construct(
 	
-	/**
-    * The Classes Inspector Helper
-    *
-    * @var ClassesInspector
-    */
-	protected ClassesInspectorHelper $classesInspectorHelper
-	) 
-	{}
+      /**
+      * The Classes Inspector Helper
+      *
+      * @var ClassesInspector
+      */
+      protected ClassesInspectorHelper $classesInspectorHelper
+     ) {}
 	
-	/**
-	* checks if the search query matches any abstract class name.
-	*
-	* @param string $searchTerm
-	*
-	* @return bool
-	*
-	*/	
-	protected function isAbstractClass(string $searchTerm = " "): bool
-	{		
-		$formatted_str = strtolower(trim($searchTerm));
+     /**
+     * checks if the search query matches any abstract class name.
+     *
+     * @param string $searchTerm
+     *
+     * @return bool
+     *
+     */	
+     protected function isAbstractClass(string $searchTerm = " "): bool
+     {		
+	   $formatted_str = strtolower(trim($searchTerm));
 		
-		$cfqns = [];
-		$stackedDataArray = [];
+	    $cfqns = [];
+	    $stackedDataArray = [];
 		
-		$cfqns = ($this->classesInspectorHelper)->cfqns;
-		$stackedDataArray =  ClassesInspectorHelper::getArrayData();
+	    $cfqns = ($this->classesInspectorHelper)->cfqns;
+	    $stackedDataArray =  ClassesInspectorHelper::getArrayData();
 		
-		$res = false;
+	    $res = false;
 
-		if (!empty($cfqns)) {
+	     if (!empty($cfqns)) {
 			
-			foreach ($cfqns as $cfqn_key => $cfqn) {
+		 foreach ($cfqns as $cfqn_key => $cfqn) {
 			
-				if  ( ($stackedDataArray[$cfqn_key]['is_abstract'] === true) &&
-				      (strcmp($formatted_str,strtolower($stackedDataArray[$cfqn_key]['short_name'])) == 0)     	
-			        ){		
-						$res = true;
+		      if  ( ($stackedDataArray[$cfqn_key]['is_abstract'] === true) &&
+			    (strcmp($formatted_str,strtolower($stackedDataArray[$cfqn_key]['short_name'])) == 0)     	
+		          ){		
+			      $res = true;
 						
-						break;
-				}
-			}		
-		} 
-		
-		return $res;
+			      break;
+			   }
+		 }		
+	     } 
+	     return $res;
 	}
 
 	/**
