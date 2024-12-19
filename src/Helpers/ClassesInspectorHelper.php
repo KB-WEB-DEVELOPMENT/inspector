@@ -4,24 +4,24 @@ namespace Inspector\Helpers;
 
 class ClassesInspectorHelper
 {    	
-	/**
+    /**
     * Classes fully qualified names (= cfqns) 
     *
     * @var array
     */
-	protected array $cfqns = []; 
+    protected array $cfqns = []; 
 	
-	/**
+    /**
     * An array used to store all classes data by data type
     *
     * @var array
     */	
-	protected array $stackedDataArray = [];
+    protected array $stackedDataArray = [];
 	
-	public function __construct() {	
+    public function __construct() {	
 	
-		$this->cfqns = ClassesHelper::getClassesFullyQualifiedNames();
-	}
+       $this->cfqns = ClassesHelper::getClassesFullyQualifiedNames();
+     }
 
 	/**
 	* 
@@ -29,8 +29,8 @@ class ClassesInspectorHelper
 	*
 	* @return array
 	*/		
-	static function getArrayData(): array
-	{
+     public static function getArrayData(): array
+     {
 		$this->storeAttributes();
 		$this->storeClassesSubclassOf();
 		$this->storeConstants();
