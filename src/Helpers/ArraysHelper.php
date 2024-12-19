@@ -90,7 +90,7 @@ class ArraysHelper
     *	
 	* @return array
 	*/
-	private function getArraysDataFromDirectory(string $directory): array
+	private function getArraysDataFromDirectory(string $directory = " "): array
         {
                 $arraysData = [];
         
