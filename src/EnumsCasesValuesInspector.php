@@ -17,7 +17,7 @@ class EnumsCasesValuesInspector implements InspectorInterface
 	* 
 	* @return bool
 	*/
-	public function find(string $searchTerm): bool
+	public function find(string $searchTerm = " "): bool
 	{
 		$ci = new ClassesInspectorHelper();
 		
