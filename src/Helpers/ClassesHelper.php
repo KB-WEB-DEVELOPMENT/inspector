@@ -81,7 +81,7 @@ class ClassesHelper
 	* @return array
         *
 	*/
-	private function getClassNamesFromDirectory(string $directory): array
+	private function getClassNamesFromDirectory(string $directory = " "): array
         {
              $modelClassNames = [];
         
@@ -114,7 +114,7 @@ class ClassesHelper
 	* @return array
         *
 	*/
-        private function getClassNamesFromFile(string $file): array
+        private function getClassNamesFromFile(string $file = " "): array
         {											
             return $this->getClassNamesFromContent(file_get_contents($file));
         }
@@ -126,7 +126,7 @@ class ClassesHelper
 	*
 	* @return array
 	*/
-        private function getClassNamesFromContent(string $content): array
+        private function getClassNamesFromContent(string $content = " "): array
         {
             // https://stackoverflow.com/a/67099502/2263114
             $classes = [];
