@@ -14,7 +14,7 @@ class Controller {
 	* 
 	* @return string
 	*/
-    static function find(string $searchTerm): string
+    static function find(string $searchTerm = " "): string
     {		
 		$absi  = new AbstractClassesInspector();	
 		$anki = new ArrayNamedKeysInspector();
