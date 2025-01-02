@@ -34,7 +34,7 @@ The package tries to determine if a string entered by a user matches one or many
 18. An array named key present in any existing one-dimensional associative array 
 19. An array string value present in any existing one-dimensional associative array 
 
-Some of the classes and methods used in the package:
+All the classes as well as some of the methods used in the package:
 
 ![PHP API Reflection classes used in the project.](https://i.ibb.co/rt1wDWL/project-image1.png 'PHP API Reflection classes used in the project')
 
