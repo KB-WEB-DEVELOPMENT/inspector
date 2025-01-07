@@ -12,7 +12,7 @@ Project to explore PHP Reflection API classes.
 
 **https://www.php.net/manual/en/book.reflection.php**
 
-The package tries to determine if a string entered by a user matches one or many of the following: 
+The package tries to determine if a case-insensitive string entered by a user matches one or many of the following: 
 
 1. An existing abstract class name
 2. An existing attribute name
@@ -60,7 +60,7 @@ All your classes and associative arrays should be put in the src/Project folder:
 use Inspector\Controller;
 
 // In any of the methods you created inside your class
-$searchTerm = 'some string to be searched by PHP Reflection API classes';
+$searchTerm = 'some case-insensitive string to be searched by PHP Reflection API classes';
 		
 // $result data type: 'string'
 $result = Controller::find($searchTerm); 
