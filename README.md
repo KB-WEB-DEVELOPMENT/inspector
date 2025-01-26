@@ -44,7 +44,9 @@ All the classes as well as some of the methods used in the package:
 
 2. Change the current working directory to the location where you want the cloned directory.
 
-4. Type: `git clone https://github.com/KB-WEB-DEVELOPMENT/inspector`
+3. Type: `git clone https://github.com/KB-WEB-DEVELOPMENT/inspector`
+
+4. Type: `composer install` 
 
 ## 3. Usage <a name="usage"></a>
 
