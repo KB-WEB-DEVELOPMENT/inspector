@@ -36,7 +36,7 @@ The package tries to determine if a case-insensitive string entered by a user ma
 
 All the classes as well as some of the methods used in the package:
 
-![PHP API Reflection classes used in the project.](https://i.ibb.co/rt1wDWL/project-image1.png 'PHP API Reflection classes used in the project')
+![PHP API Reflection classes used in the project.](https://i.imghippo.com/files/zoi7058iAU.png 'PHP API Reflection classes used in the project')
 
 ## 2. Installation <a name="installation"></a>
 
