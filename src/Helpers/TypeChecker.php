@@ -102,7 +102,7 @@ class TypeChecker
 	*/	
 	protected function checkKeysStrings(mixed $val): bool
 	{
-		return (gettype($var) != 'string');
+		return (gettype($val) != 'string');
 	}
 
 	/**
@@ -158,7 +158,7 @@ class TypeChecker
 	*/
 	protected function checkValuesStrings(mixed $val): bool
 	{
-		return (gettype($var) != 'string');
+		return (gettype($val) != 'string');
 	}
 
 	/**
