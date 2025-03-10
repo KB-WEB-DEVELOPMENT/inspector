@@ -82,7 +82,7 @@ class ArrayStringValuesInspector implements InspectorInterface
 	*/	
 	protected function checkValuesStrings(mixed $val): bool
 	{
-		return (gettype($var) != 'string');
+		return (gettype($val) != 'string');
 	}
 
 	/**
