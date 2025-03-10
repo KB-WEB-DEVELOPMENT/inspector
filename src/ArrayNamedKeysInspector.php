@@ -81,7 +81,7 @@ class ArrayNamedKeysInspector implements InspectorInterface
 	*/	
 	protected function checkKeysStrings(mixed $val): bool
 	{
-		return (gettype($var) != 'string');
+		return (gettype($val) != 'string');
 	}
 
 	/**
