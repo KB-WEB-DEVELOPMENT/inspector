@@ -58,10 +58,12 @@ All your classes and associative arrays should be put in the src/Project folder:
 ```
 <?php
 
-// In the class you create, import the Controller class present in src/Project
+//  In your examples/index.php file, import the Controller class present in the 'src/' directory
+
+require __DIR__ . '/../vendor/autoload.php';
+
 use Inspector\Controller;
 
-// In any of the methods you created inside your class
 $searchTerm = 'some case-insensitive string to be searched by PHP Reflection API classes';
 		
 // $result data type: 'string'
