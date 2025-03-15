@@ -6,20 +6,20 @@ use PHPUnit\Framework\TestCase;
 
 class TraitTest extends TestCase	
 {
-	public function testTraitFound(): void
+    public function testTraitFound(): void
     {
-		$searchTerm = 'TestOriginalTrait';
+	$searchTerm = 'TestOriginalTrait';
 		
-		$result = Controller::find($searchTerm);
+	$result = Controller::find($searchTerm);
 		
         $this->assertContains('Data type: Trait',$result);
     }
 	
-	public function testTraitNotFound(): void
+    public function testTraitNotFound(): void
     {
-		$searchTerm = 'WrongTestOriginalTrait';
+	$searchTerm = 'WrongTestOriginalTrait';
 		
-		$result = Controller::find($searchTerm);
+	$result = Controller::find($searchTerm);
 		
         $this->assertNotContains('Data type: Trait',$result); 
     }     
