@@ -6,21 +6,21 @@ use PHPUnit\Framework\TestCase;
 
 class ArrayStringKeysTest extends TestCase	
 {
-	public function testStringKeyFound(): void
+    public function testStringKeyFound(): void
     {
-		$searchTerm = 'key1';
+       $searchTerm = 'key1';
 		
-		$result = Controller::find($searchTerm);
+       $result = Controller::find($searchTerm);
 		
-        $this->assertContains('Data type: Array named key',$result);
+       $this->assertContains('Data type: Array named key',$result);
     }
 	
-	public function testStringKeyNotFound(): void
+    public function testStringKeyNotFound(): void
     {
-		$searchTerm = 'wrongKey';
+       $searchTerm = 'wrongKey';
 		
-		$result = Controller::find($searchTerm);
+       $result = Controller::find($searchTerm);
 		
-        $this->assertNotContains('Data type: Array named key',$result); 
+       $this->assertNotContains('Data type: Array named key',$result); 
     }  
 }
