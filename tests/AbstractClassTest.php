@@ -6,20 +6,20 @@ use PHPUnit\Framework\TestCase;
 
 class AbstractClassTest extends TestCase	
 {
-	public function testAbstractClassFound(): void
+    public function testAbstractClassFound(): void
     {
-		$searchTerm = 'TestAbstractClass';
+        $searchTerm = 'TestAbstractClass';
 		
-		$result = Controller::find($searchTerm);
+	$result = Controller::find($searchTerm);
 		
         $this->assertContains('Data type: Abstract class',$result);
     }
 	
-	public function testAbstractClassNotFound(): void
+    public function testAbstractClassNotFound(): void
     {
-		$searchTerm = 'WrongAbstractClass';
+        $searchTerm = 'WrongAbstractClass';
 		
-		$result = Controller::find($searchTerm);
+	$result = Controller::find($searchTerm);
 		
         $this->assertNotContains('Data type: Abstract class',$result); 
     }
