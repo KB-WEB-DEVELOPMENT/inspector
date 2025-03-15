@@ -6,20 +6,20 @@ use PHPUnit\Framework\TestCase;
 
 class InstantiableClassTest extends TestCase	
 {
-	public function testInstantiableClassFound(): void
+    public function testInstantiableClassFound(): void
     {
-		$searchTerm = 'TestInstantiableClass';
+	$searchTerm = 'TestInstantiableClass';
 		
-		$result = Controller::find($searchTerm);
+	$result = Controller::find($searchTerm);
 		
         $this->assertContains('Data type: Instantiable class',$result);
     }
 	
-	public function testInstantiableClassNotFound(): void
+    public function testInstantiableClassNotFound(): void
     {
-		$searchTerm = 'WrongTestInstantiableClass';
+	$searchTerm = 'WrongTestInstantiableClass';
 		
-		$result = Controller::find($searchTerm);
+	$result = Controller::find($searchTerm);
 		
         $this->assertNotContains('Data type: Instantiable class',$result); 
     }
