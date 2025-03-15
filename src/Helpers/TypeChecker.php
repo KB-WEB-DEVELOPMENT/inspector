@@ -36,17 +36,21 @@ class TypeChecker
 
 	     if (!empty($cfqns)) {
 			
-		 foreach ($cfqns as $cfqn_key => $cfqn) {
-			
-		      if  ( ($stackedDataArray[$cfqn_key]['is_abstract'] === true) &&
-			    (strcmp($formatted_str,strtolower($stackedDataArray[$cfqn_key]['short_name'])) == 0)     	
-		          ){		
-			      $res = true;
-						
-			      break;
-			   }
-		 }		
-	     } 
+			foreach ($cfqns as $cfqn_key => $cfqn) {
+				
+				if  ( ($stackedDataArray[$cfqn_key]['is_abstract'] === true) &&
+					(strcmp($formatted_str,strtolower($stackedDataArray[$cfqn_key]['short_name'])) == 0)     	
+					  ){		
+					  $res = true;
+							
+					  break;
+				   }
+			}
+
+			if ($res === true)
+				return $res;			 
+	     }
+		 
 	     return $res;
 	}
 
@@ -87,6 +91,9 @@ class TypeChecker
 					}
 					unset($keysArray);
 				}
+				
+				if ($res === true)
+					return $res;		
 			}
 		}
 		return $res;			
@@ -143,6 +150,9 @@ class TypeChecker
 					
 					unset($valuesArray);	
 				}
+				
+				if ($res === true)
+					return $res;
 			}		
 		}
 		return $res;		
@@ -197,6 +207,10 @@ class TypeChecker
 
 						}
 					}
+					
+					if ($res === true)
+						return $res;
+					
 				}
 			}
 		}
@@ -239,6 +253,9 @@ class TypeChecker
 							break;
 						}
 					}
+					
+					if ($res === true)
+						return $res;					
 				}
 			}
 		}		
@@ -277,6 +294,9 @@ class TypeChecker
 						break;
 				}
 			}
+			
+			if ($res === true)
+				return $res;
 		}				
 		return $res;		
 	}
@@ -317,9 +337,13 @@ class TypeChecker
 							break;
 						}
 					}
+					
+					if ($res === true)
+						return $res;
 				}
 			}
-		}		
+		}
+		
 		return $res;				
 	}
 
@@ -358,6 +382,9 @@ class TypeChecker
 							break;
 						}
 					}
+					
+					if ($res === true)
+						return $res;
 				}
 			}
 		}		
@@ -396,6 +423,9 @@ class TypeChecker
 						break;
 				}
 			}
+			
+			if ($res === true)
+				return $res;
 		}	
 		return $res;			
 	}
@@ -433,6 +463,9 @@ class TypeChecker
 						break;
 				}
 			}
+			
+			if ($res === true)
+				return $res;
 		}
 		return $res;			
 	}
@@ -470,6 +503,9 @@ class TypeChecker
 					break;
 				}
 			}
+			
+			if ($res === true)
+				return $res;			
 		}		
 		return $res;			
 	}
@@ -507,6 +543,9 @@ class TypeChecker
 					   break;
 				    }
 			}
+
+			if ($res === true)
+				return $res;			
 		}
 		
 		return $res;		
@@ -545,6 +584,9 @@ class TypeChecker
 					break;
 				}
 			}
+			
+			if ($res === true)
+				return $res;
 		}		
 		return $res;				
 	}
@@ -584,6 +626,9 @@ class TypeChecker
 						   break; 	
 						}
 					}
+					
+					if ($res === true)
+					return $res;
 				}
 			}
 		}		
@@ -624,6 +669,9 @@ class TypeChecker
 					}
 				}
 			}
+			
+			if ($res === true)
+				return $res;
 		}		
 		return $res;		
 	}
@@ -663,6 +711,9 @@ class TypeChecker
 						   break;	
 						}
 					}
+					
+					if ($res === true)
+						return $res;
 				}
 			}
 		}
@@ -704,6 +755,9 @@ class TypeChecker
 							break;
 						}
 					}
+					
+					if ($res === true)
+						return $res;
 				}
 			}
 		}
@@ -746,6 +800,9 @@ class TypeChecker
 						   
 						}
 					}
+					
+					if ($res === true)
+						return $res;
 				}
 			}
 		}
@@ -787,9 +844,13 @@ class TypeChecker
 						    break;
 						}
 					}
+					
+					if ($res === true)
+						return $res;
 				}
 			}
 		}
+		
 		return $res;				
 	}
 
