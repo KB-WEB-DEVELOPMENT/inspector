@@ -6,20 +6,20 @@ use PHPUnit\Framework\TestCase;
 
 class ArrayStringValuesTest extends TestCase	
 {
-	public function testStringValueFound(): void
+    public function testStringValueFound(): void
     {
-		$searchTerm = 'value1';
+       $searchTerm = 'value1';
 		
-		$result = Controller::find($searchTerm);
+       $result = Controller::find($searchTerm);
 		
-        $this->assertContains('Data type: Array string value',$result);
+       $this->assertContains('Data type: Array string value',$result);
     }
 	
-	public function testStringValueNotFound(): void
+    public function testStringValueNotFound(): void
     {
-		$searchTerm = 'wrongValue';
+        $searchTerm = 'wrongValue';
 		
-		$result = Controller::find($searchTerm);
+        $result = Controller::find($searchTerm);
 		
         $this->assertNotContains('Data type: Array string value',$result); 
     }     
