@@ -52,7 +52,7 @@ All the classes as well as some of the methods used in the package:
 
 All your classes and associative arrays should be put in the src/Project folder:
 
-![Package directory structure.](https://i.ibb.co/m5jzjFp/project-image2.png 'Package directory structure')
+![Package directory structure.](https://i.ibb.co/gML6fsnF/inspector-project.png 'Package directory structure')
 
 
 ```
