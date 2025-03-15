@@ -6,21 +6,21 @@ use PHPUnit\Framework\TestCase;
 
 class ChildClassTest extends TestCase	
 {
-	public function testChildClassFound(): void
+    public function testChildClassFound(): void
     {
-		$searchTerm = 'TestChildClass';
+	 $searchTerm = 'TestChildClass';
 		
-		$result = Controller::find($searchTerm);
+	 $result = Controller::find($searchTerm);
 		
-        $this->assertContains('Class short name: TestChildClass',$result);
+         $this->assertContains('Class short name: TestChildClass',$result);
     }
 	
-	public function testChildClassNotFound(): void
+    public function testChildClassNotFound(): void
     {
-		$searchTerm = 'wrongTestChildClass';
+       $searchTerm = 'wrongTestChildClass';
 		
-		$result = Controller::find($searchTerm);
+       $result = Controller::find($searchTerm);
 		
-        $this->assertNotContains('Class short name:',$result); 
+       $this->assertNotContains('Class short name:',$result); 
     }    
 }
