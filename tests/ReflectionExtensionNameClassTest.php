@@ -10,24 +10,24 @@ class ReflectionExtensionNameClassTest extends TestCase
 {		
     public function testReflectionExtensionNameClassFound(): void
     {
-	$testReflNameObj = new TestReflectionExtensionNameClass('ReflectionMethod');
+		$testReflNameObj = new TestReflectionExtensionNameClass('ReflectionMethod');
 
-	$extension_name = $testReflNameObj->getExtensionName();
+		$extension_name = $testReflNameObj->getExtensionName();
 		
-	$this->assertEquals('Reflection',$extension_name);
+		$this->assertEquals('Reflection',$extension_name);
 
-	$searchTerm = 'Reflection';
+		$searchTerm = 'Reflection';
 		
-	$result = Controller::find($searchTerm);
+		$result = Controller::find($searchTerm);
 		
         $this->assertContains('Data type: Reflection Extension Name',$result);
     }
 	
     public function testReflectionExtensionNameClassNotFound(): void
     {
-	$searchTerm = 'WrongReflection';
+		$searchTerm = 'WrongReflection';
 		
-	$result = Controller::find($searchTerm);
+		$result = Controller::find($searchTerm);
 		
         $this->assertNotContains('Data type: Reflection Extension Name',$result); 
     }
