@@ -10,7 +10,7 @@ class AbstractClassTest extends TestCase
     {
         $searchTerm = 'TestAbstractClass';
 		
-	$result = Controller::find($searchTerm);
+		$result = Controller::find($searchTerm);
 		
         $this->assertContains('Data type: Abstract class',$result);
     }
@@ -19,7 +19,7 @@ class AbstractClassTest extends TestCase
     {
         $searchTerm = 'WrongAbstractClass';
 		
-	$result = Controller::find($searchTerm);
+		$result = Controller::find($searchTerm);
 		
         $this->assertNotContains('Data type: Abstract class',$result); 
     }
