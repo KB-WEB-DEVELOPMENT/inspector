@@ -17,10 +17,10 @@ class EnumBackedCaseTest extends TestCase
 	
     public function testBackedCaseTestNotFound(): void
     {
-         $searchTerm = 'wrong enum backed case value';
+    	$searchTerm = 'wrong enum backed case value';
 		
-	 $result = Controller::find($searchTerm);
+	 	$result = Controller::find($searchTerm);
 		
-         $this->assertNotContains('Data type: Enum string case backing value',$result); 
+        $this->assertNotContains('Data type: Enum string case backing value',$result); 
     } 
 }
