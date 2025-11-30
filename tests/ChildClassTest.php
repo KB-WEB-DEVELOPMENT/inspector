@@ -8,11 +8,11 @@ class ChildClassTest extends TestCase
 {
     public function testChildClassFound(): void
     {
-	 $searchTerm = 'TestChildClass';
+	 	$searchTerm = 'TestChildClass';
 		
-	 $result = Controller::find($searchTerm);
+	 	$result = Controller::find($searchTerm);
 		
-         $this->assertContains('Class short name: TestChildClass',$result);
+        $this->assertContains('Class short name: TestChildClass',$result);
     }
 	
     public function testChildClassNotFound(): void
