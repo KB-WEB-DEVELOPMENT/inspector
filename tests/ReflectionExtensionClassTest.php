@@ -11,24 +11,24 @@ class ReflectionExtensionClassTest extends TestCase
 		
     public function testReflectionExtensionClassFound(): void
     {
-	$testReflObj = new TestReflectionExtensionClass('ReflectionParameter');
+		$testReflObj = new TestReflectionExtensionClass('ReflectionParameter');
 
-	$extension_name = $testReflObj->getExtension()->name;
+		$extension_name = $testReflObj->getExtension()->name;
 		
-	$this->assertEquals('Reflection',$extension_name);
+		$this->assertEquals('Reflection',$extension_name);
 
-	$searchTerm = 'Reflection';
+		$searchTerm = 'Reflection';
 		
-	$result = Controller::find($searchTerm);
+		$result = Controller::find($searchTerm);
 		
         $this->assertContains('Data type: Reflection extension',$result);
     }
 	
     public function testReflectionExtensionClassNotFound(): void
     {
-	$searchTerm = 'WrongReflection';
+		$searchTerm = 'WrongReflection';
 		
-	$result = Controller::find($searchTerm);
+		$result = Controller::find($searchTerm);
 		
         $this->assertNotContains('Data type: Reflection extension',$result); 
     }
