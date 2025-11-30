@@ -8,18 +8,18 @@ class TraitAliasTest extends TestCase
 {
     public function testTraitAliasFound(): void
     {
-	$searchTerm = 'aliasedTestTraitMethod';
+		$searchTerm = 'aliasedTestTraitMethod';
 		
-	$result = Controller::find($searchTerm);
+		$result = Controller::find($searchTerm);
 		
         $this->assertContains('Data type: Trait Alias',$result);
     }
 	
     public function testTraitAliasNotFound(): void
     {
-	$searchTerm = 'WrongAliasedTestTraitMethod';
+		$searchTerm = 'WrongAliasedTestTraitMethod';
 		
-	$result = Controller::find($searchTerm);
+		$result = Controller::find($searchTerm);
 		
         $this->assertNotContains('Data type: Trait Alias',$result); 
     }    
