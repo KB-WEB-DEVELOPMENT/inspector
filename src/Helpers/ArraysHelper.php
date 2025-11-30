@@ -54,7 +54,7 @@ class ArraysHelper
 	*
 	*/		
 	private function getDirectoriesList(): array 
-        {
+    {
 		
 		$path = __DIR__ . '/../project'; 
 		
@@ -63,10 +63,10 @@ class ArraysHelper
 		$array_of_dirs[] = $path;
 	
 		$iter = new RecursiveIteratorIterator(
-			   new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS),
-			   RecursiveIteratorIterator::SELF_FIRST,
-			   RecursiveIteratorIterator::CATCH_GET_CHILD // Ignore "Permission denied"
-			);
+			   		new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS),
+			   		RecursiveIteratorIterator::SELF_FIRST,
+			   		RecursiveIteratorIterator::CATCH_GET_CHILD // Ignore "Permission denied"
+				);
 					
 		if(!empty($iter))  {
 	
@@ -91,39 +91,41 @@ class ArraysHelper
 	* @return array
 	*/
 	private function getArraysDataFromDirectory(string $directory = " "): array
-        {
-                $arraysData = [];
+    {
+    	$arraysData = [];
         
 		foreach (new RecursiveIteratorIterator(
 						new RecursiveDirectoryIterator(
 							$directory, 
 							RecursiveDirectoryIterator::SKIP_DOTS | RecursiveDirectoryIterator::CURRENT_AS_SELF				
 						)
-					) as $file
-			) {
-				$parts = [];			
+				) as $file
+		) {
+			$parts = [];			
 					
-				$parts = explode(".",$file);
+			$parts = explode(".",$file);
 
-				$extension = (is_array($parts) && count($parts) > 1) ? end($parts) : null;
+			$extension = (is_array($parts) && count($parts) > 1) ? end($parts) : null;
 					
-				if ( (!is_null($extension)) && ((new SplFileInfo($file))->getExtension() === 'php') ) {
+			if ((!is_null($extension)) && ((new SplFileInfo($file))->getExtension() === 'php')) {
 						
-				    $dir_path = [];
+				$dir_path = [];
 						
-				    $dir_path = pathinfo($directory);
+				$dir_path = pathinfo($directory);
 																		
-				    $trim_dir_name = ltrim($dir_path['dirname'],'/');
+				$trim_dir_name = ltrim($dir_path['dirname'],'/');
 																
-				     if (is_array($array = include  __DIR__ . '/../project' . "/$trim_dir_name/" . basename($file))) {
+				if (is_array($array = include  __DIR__ . '/../project' . "/$trim_dir_name/" . basename($file))) {
 									
-				         $arraysData['array_filepath'][] = '/project' . "/$trim_dir_name/" .  basename($file);
+					$arraysData['array_filepath'][] = '/project' . "/$trim_dir_name/" .  basename($file);
 							
-					 $arraysData['array_content'][] = include  __DIR__ . '/../project' . "/$trim_dir_name/" . basename($file);
-				     }	
-				 }
-			  }
-		
-		          return $arraysData;
-       }
+					$arraysData['array_content'][] = include  __DIR__ . '/../project' . "/$trim_dir_name/" . basename($file);
+				}	
+			}
+		}
+	
+		return $arraysData;
+    
+	}
 }
+
